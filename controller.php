@@ -10,7 +10,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'theme_blue_print';
     protected $appVersionRequired = '5.7.4';
-    protected $pkgVersion = '1.0.0';
+    protected $pkgVersion = '0.9.0';
 
     public function getPackageDescription()
     {

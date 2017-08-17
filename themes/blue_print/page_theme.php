@@ -1,9 +1,6 @@
 <?php
 namespace Concrete\Package\ThemeBluePrint\Theme\BluePrint;
 
-/*use Concrete\Core\Area\Layout\Preset\Provider\ThemeProviderInterface;
-class PageTheme extends \Concrete\Core\Page\Theme\Theme implements ThemeProviderInterface*/
-
 class PageTheme extends \Concrete\Core\Page\Theme\Theme
 {
     protected $pThemeGridFrameworkHandle = 'bootstrap3';
@@ -16,16 +13,6 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme
     public function getThemeDescription()
     {
         return t('A basic theme for reuse');
-    }
-
-    public function registerAssets()
-    {
-        /*$this->providesAsset('javascript', 'bootstrap/*');
-        $this->providesAsset('css', 'bootstrap/*');*/
-
-        /*$this->requireAsset('javascript', 'bootstrap/alert');
-        $this->requireAsset('css', 'bootstrap/alert');
-        $this->requireAsset('css', 'bootstrap');*/
     }
 
     public function getThemeAreaClasses()
@@ -43,9 +30,4 @@ class PageTheme extends \Concrete\Core\Page\Theme\Theme
             '*' => array('minorBlock')
         );
     }
-
-    /*public function getThemeAreaLayoutPresets()
-    {
-        // TODO: Implement getThemeAreaLayoutPresets() method.
-    }*/
 }
