@@ -1,15 +1,28 @@
 <?php
-defined('C5_EXECUTE') or die(_('Access Denied.'));
+defined('C5_EXECUTE') or die("Access Denied.");
+$v = View::getInstance();
 
-$c = Page::getCurrentPage();
+$v->inc('elements/header.php');
 ?>
 
-    <?php $view->inc('elements/header.php'); ?>
-        <div class="<?= $c->getPageWrapperClass(); ?>">
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php
+                    View::element('system_errors', [
+                        'format' => 'block',
+                        'error' => isset($error) ? $error : null,
+                        'success' => isset($success) ? $success : null,
+                        'message' => isset($message) ? $message : null,
+                    ]);
 
-            <?php Loader::element('system_errors', array('format' => 'block', 'error' => $error, 'success' => $success,
-                'message' => $message)); ?>
-            <?php print $innerContent; ?>
-
+                    echo $innerContent;
+                    ?>
+                </div>
+            </div>
         </div>
-    <?php $view->inc('elements/footer.php'); ?>
+    </main>
+
+<?php
+$v->inc('elements/footer.php');
